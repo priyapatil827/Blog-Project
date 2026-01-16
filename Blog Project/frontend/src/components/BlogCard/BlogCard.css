@@ -1,0 +1,189 @@
+/* Card Styles */
+.blog-card {
+  background-color: #FFFBDE; /* soft background */
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.blog-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.blog-title {
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+  color: #096B68; /* title color */
+}
+
+.blog-content {
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Action Buttons on Card */
+.blog-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 7px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.edit-btn {
+  background-color: #129990; /* primary action */
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #0f867f;
+}
+
+.delete-btn {
+  background-color: #096B68; /* secondary action */
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #07514f;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(144, 209, 202, 0.85); /* light teal overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 15px;
+}
+
+.modal-content {
+  background-color: #FFFBDE; /* modal bg */
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  max-height: 85%;
+  overflow-y: auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 28px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #096B68;
+  font-weight: bold;
+}
+
+.close-btn:hover {
+  color: #129990;
+}
+
+.modal-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Modal Styles */
+.uka.modal-content {
+  background-color: #FFFBDE; /* modal bg */
+  padding: 25px 20px 30px 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  max-height: 85%;
+  overflow-y: auto;
+
+  /* Center layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 28px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #096B68;
+  font-weight: bold;
+}
+
+.close-btn:hover {
+  color: #129990;
+}
+
+/* Modal Image */
+.modal-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Title below image */
+.modal-content h2 {
+  font-size: 1.8rem;
+  color: #096B68;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Blog Content below title */
+.modal-content p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  max-width: 90%;
+}
+
+/* Buttons centered below content */
+.blog-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center; /* center buttons */
+  flex-wrap: wrap;
+}

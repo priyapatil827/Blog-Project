@@ -1,0 +1,123 @@
+.login-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFFBDE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.login-form {
+  background-color: #90D1CA;
+  padding: 42px 40px;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(18, 153, 144, 0.3);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.login-form h2 {
+  color: #096B68;
+  font-size: 2rem;
+  margin-bottom: 28px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 13px 14px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  background-color: #FFFBDE;
+  color: #096B68;
+}
+
+.login-form input::placeholder {
+  color: #129990;
+}
+
+.login-form input:focus {
+  outline: 2px solid #129990;
+  background-color: #E0F0EC;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 10px;
+  border-radius: 999px;
+  border: none;
+  background-color: #129990;
+  color: #FFFBDE;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.login-form button:hover {
+  background-color: #096B68;
+  transform: translateY(-2px);
+}
+
+.signup-link {
+  margin-top: 22px;
+  font-size: 0.9rem;
+  color: #096B68;
+}
+
+.signup-link a {
+  color: #129990;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+/* POPUP */
+.popup {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #fff;
+  z-index: 999;
+  animation: slideIn 0.4s ease, fadeOut 0.4s ease 2.2s forwards;
+}
+
+/* SUCCESS */
+.popup.success {
+  background-color: #16a34a; /* green */
+}
+
+/* ERROR */
+.popup.error {
+  background-color: #dc2626; /* red */
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(120%);
+  }
+}

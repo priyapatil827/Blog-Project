@@ -1,0 +1,106 @@
+/* Form Container */
+.edit-blog-form {
+  background-color: #90d1ca; /* soft cream */
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+/* Form Title */
+.edit-blog-form h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #096b68;
+  margin-bottom: 10px;
+}
+
+/* Input & Textarea */
+.edit-blog-form input[type="text"],
+.edit-blog-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.edit-blog-form input[type="text"]:focus,
+.edit-blog-form textarea:focus {
+  border-color: #90d1ca;
+  box-shadow: 0 0 8px rgba(144, 209, 202, 0.5);
+}
+
+.edit-blog-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Current Image Preview */
+.current-image-preview p {
+  margin: 0 0 5px 0;
+  font-weight: bold;
+  color: #096b68;
+}
+
+.current-image-preview img {
+  width: 150px;
+  border-radius: 10px;
+  border: 2px solid #90d1ca;
+  margin-bottom: 10px;
+}
+
+/* File Input Label */
+.file-label {
+  display: block;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1rem;
+  color: #096b68;
+  transition: border 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.file-label input[type="file"] {
+  display: none; /* hide default file input */
+}
+
+.file-label:hover {
+  border-color: #90d1ca;
+  box-shadow: 0 0 8px rgba(144, 209, 202, 0.5);
+}
+
+/* Submit Button */
+.edit-blog-form button {
+  background-color: #129990;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.edit-blog-form button:hover {
+  background-color: #0f7f72;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(18, 153, 144, 0.6);
+}
+
+.edit-blog-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

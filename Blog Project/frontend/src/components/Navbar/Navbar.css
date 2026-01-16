@@ -1,0 +1,68 @@
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: #90d1ca;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 28px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  box-shadow: 0 4px 15px rgba(18, 153, 144, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #129990;
+}
+
+.navbar h2 {
+  color: #096b68;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+}
+
+.navbar div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #096b68;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: #129990;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.btn {
+  background-color: #129990;
+  color: #fffbde;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #096b68;
+  transform: translateY(-2px);
+}

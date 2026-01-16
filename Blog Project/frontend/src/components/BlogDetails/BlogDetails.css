@@ -1,0 +1,37 @@
+.blog-details {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  color: #096B68;
+}
+
+.blog-details img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 25px;
+}
+
+.blog-details h1 {
+  font-size: 2.2rem;
+  margin-bottom: 18px;
+}
+
+.blog-details p {
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+/* BACK ARROW */
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #129990;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.back-btn:hover {
+  color: #096B68;
+}

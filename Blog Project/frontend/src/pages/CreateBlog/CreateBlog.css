@@ -1,0 +1,122 @@
+/* Container */
+.create-blog-container {
+  background-color: #90D1CA; /* page background same as signup */
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* soft shadow like signup */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+/* Heading */
+.create-blog-container h2 {
+  color: #096B68; /* signup heading color */
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.create-blog-container input[type="text"],
+.create-blog-container textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px; /* match signup */
+  border: none; /* like signup */
+  outline: none;
+  font-size: 1rem;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+/* Input Focus */
+.create-blog-container input[type="text"]:focus,
+.create-blog-container textarea:focus {
+  box-shadow: 0 0 8px rgba(144, 209, 202, 0.5); /* soft highlight */
+  border: 2px solid #90D1CA; /* subtle accent border */
+}
+
+/* Textarea */
+.create-blog-container textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Image Preview */
+.image-preview img {
+  width: 150px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 2px solid #90D1CA; /* match input focus */
+}
+
+/* Buttons */
+.create-blog-container button {
+  background-color: #129990; /* signup primary button */
+  color: #fff;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px; /* match signup */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.create-blog-container button:hover {
+  background-color: #096B68; /* hover like signup */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(18, 153, 144, 0.4);
+}
+
+.create-blog-container button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 250px;
+  max-width: 400px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  animation: slideDown 0.3s ease;
+}
+
+.popup-content {
+  padding: 15px 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  font-size: 1rem;
+}
+
+/* Popup Types */
+.popup-overlay.success .popup-content {
+  background-color: #129990;
+}
+
+.popup-overlay.error .popup-content {
+  background-color: #e74c3c;
+}
+
+.popup-overlay.warning .popup-content {
+  background-color: #f39c12;
+}
+
+/* Slide Down Animation */
+@keyframes slideDown {
+  from { transform: translate(-50%, -50px); opacity: 0; }
+  to { transform: translate(-50%, 0); opacity: 1; }
+}

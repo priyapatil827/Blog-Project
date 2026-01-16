@@ -1,0 +1,106 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FULL SCREEN BACKGROUND */
+.welcome {
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFFBDE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* CARD */
+.welcome-card {
+  background-color: #90D1CA;
+  padding: 48px 44px;
+  border-radius: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 20px 45px rgba(18, 153, 144, 0.3);
+  animation: slideFade 0.9s ease forwards;
+}
+
+/* HEADING */
+.welcome-card h1 {
+  font-size: 2.3rem;
+  color: #096B68;
+  margin-bottom: 18px;
+}
+
+/* TEXT */
+.welcome-card p {
+  font-size: 1.05rem;
+  color: #096B68;
+  line-height: 1.7;
+  margin-bottom: 38px;
+}
+
+/* BUTTONS */
+.welcome-buttons {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+}
+
+.welcome-buttons a {
+  padding: 13px 34px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.35s;
+  text-align: center;
+  color: #FFFBDE;
+}
+
+/* PRIMARY BUTTON */
+.btn-primary {
+  background-color: #129990;
+}
+
+.btn-primary:hover {
+  background-color: #096B68;
+}
+
+/* SECONDARY BUTTON */
+.btn-secondary {
+  background-color: #096B68;
+}
+
+.btn-secondary:hover {
+  background-color: #129990;
+}
+
+/* ANIMATION */
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .welcome-buttons {
+    flex-direction: column;
+  }
+
+  .welcome-card {
+    padding: 36px 26px;
+  }
+
+  .welcome-card h1 {
+    font-size: 1.8rem;
+  }
+}
