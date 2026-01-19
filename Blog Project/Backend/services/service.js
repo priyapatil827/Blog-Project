@@ -1,34 +1,29 @@
-import nodemailer from "nodemailer";
-import dotenv from "dotenv";
-
-dotenv.config(); // ✅ Make sure this is at the very top
-
-// ------------------ Debug check ------------------
-console.log("EMAIL_USER =", process.env.EMAIL_USER);
-console.log("EMAIL_PASS =", process.env.EMAIL_PASS ? "SET" : "NOT SET");
-// ------------------------------------------------
+import nodemailer from 'nodemailer'
+import dotenv from 'dotenv'
+import { OtpCollection } from '../models/otp_model';
+dotenv.config()
 
 const transport = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS, // 16-char Gmail App Password
-  },
+    service: "gmail",
+    auth: {
+        email: process.env.EMAIL,
+        pass: process.env.PASS
+    }
 });
 
-export const sendotpmail = async (email, otp) => {
-  try {
-    await transport.sendMail({
-      from: `"OTP Services" <${process.env.EMAIL_USER}>`,
-      to: email,
-      subject: "OTP Verification",
-      text: `Your OTP is ${otp}. It will expire in 2 minutes!`,
-    });
-
-    console.log("✅ OTP sent to:", email);
-    return true;
-  } catch (err) {
-    console.error("❌ Mail error:", err); // full error print karo
-    return false;
-  }
-};
+export const sendOTP = async (email) => {
+    const otp = Math.floor(100000 + Math.random() * 90000);
+    const expiry = new Date(Date.now() + 1000 * 60 * 2);
+    try {
+        await OtpCollection.create({ email, otp, expiry });
+        await transport.sendMail({
+            from: process.env.EMAIL,
+            to: email,
+            subject: "OTP Verification",
+            text: `Your otp is ${otp}, will expire in 2 minutes`
+        })
+        return true;
+    } catch (err) {
+        return false;
+    }
+}
