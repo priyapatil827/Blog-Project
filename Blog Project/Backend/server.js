@@ -29,9 +29,7 @@ app.use(
 app.use("/uploads", express.static("uploads"));
 app.use("/api", router);
 
-// ✅ OTP ROUTES (ONLY THIS PART ADDED)
-app.post("/otp/send", sendOtp);
-app.post("/otp/verify", verifyOtp);
+
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {

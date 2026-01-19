@@ -1,42 +1,36 @@
 import { otpmodel } from "../models/otpModel.js";
-import { sendotpmail } from "../services/service.js";
+import { sendOtpMail } from "../services/service.js";
+
 export const sendOtp = async (req, res) => {
   const { email } = req.body;
-
-  const otp = Math.floor(100000 + Math.random() * 900000);
+  const otp = Math.floor(100000 + Math.random() * 90000);
   const expiry = new Date(Date.now() + 2 * 60 * 1000);
-
   try {
-    await otpmodel.deleteMany({ email }); // remove old OTPs
-
     await otpmodel.create({ email, otp, expiry });
-
-    const status = await sendotpmail(email, otp);
-
+    const status = await sendOtpMail(email, otp);
     if (status) {
-      return res.json({ message: "OTP sent successfully" });
+      res.json({ message: "otp sent successfully !!" });
+    } else {
+      res.json({ message: "cant sent mail !" });
     }
-
-    res.status(500).json({ message: "Cannot send mail" });
   } catch (err) {
-    res.status(500).json({ message: "OTP not generated", error: err.message });
+    res.json({ message: "otp not generated !", err });
   }
 };
 
 export const verifyOtp = async (req, res) => {
   const { email, otp } = req.body;
-
   const data = await otpmodel.findOne({ email, otp });
 
   if (!data) {
-    return res.status(400).json({ message: "OTP mismatch" });
+    return res.json({ message: "otp mismatched !" });
   }
 
-  if (data.expiry < new Date()) {
-    return res.status(400).json({ message: "OTP expired" });
+  if (data.expiry < new Date(Date.now())) {
+    return res.json({ message: "otp expired !" });
   }
 
-  await otpmodel.deleteMany({ email }); // important
-
-  res.json({ message: "OTP verified!" });
+  res.json({ message: "otp verified !" });
+  await otpmodel.deleteMany({ email });
 };
+
