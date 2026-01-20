@@ -7,8 +7,6 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-
-  // popup state
   const [popup, setPopup] = useState({ show: false, message: "", type: "" });
 
   const navigate = useNavigate();
@@ -20,31 +18,26 @@ function Login() {
     try {
       const data = await login(email, password);
 
-      if (data.token) {
-        localStorage.setItem("token", data.token);
-      }
-
-      // success popup
+      // 🔹 Assume backend login success
       setPopup({
         show: true,
-        message: "Login successful 🎉",
+        message: "Login successful 🎉 Redirecting to OTP...",
         type: "success",
       });
 
+      // 🔹 Email pass karo OTP page ko
       setTimeout(() => {
-        navigate("/home");
-      }, 1500);
+        navigate("/verify-otp", { state: { email } });
+      }, 1200);
 
     } catch (err) {
       setPopup({
         show: true,
-        message: err.response?.data?.message || "Login failed ❌",
+        message: "Login failed ❌",
         type: "error",
       });
     } finally {
       setLoading(false);
-
-      // auto hide popup
       setTimeout(() => {
         setPopup({ show: false, message: "", type: "" });
       }, 2500);
@@ -53,11 +46,8 @@ function Login() {
 
   return (
     <div className="login-container">
-      {/* POPUP */}
       {popup.show && (
-        <div className={`popup ${popup.type}`}>
-          {popup.message}
-        </div>
+        <div className={`popup ${popup.type}`}>{popup.message}</div>
       )}
 
       <form className="login-form" onSubmit={handleLogin}>

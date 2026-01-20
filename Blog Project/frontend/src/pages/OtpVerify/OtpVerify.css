@@ -1,56 +1,71 @@
 .otp-container {
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  background-color: #FFFBDE; /* main bg */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .otp-card {
-  background: white;
+  background-color: #90D1CA; /* card bg */
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   width: 350px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: #096B68; /* text color */
 }
 
 .otp-card h2 {
   margin-bottom: 20px;
-  color: #333;
+  color: #096B68;
 }
 
 .otp-card input {
-  width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  border-radius: 8px;
+  border: none;
   font-size: 16px;
 }
 
 .otp-card button {
-  width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: none;
-  border-radius: 5px;
-  background: #667eea;
-  color: white;
-  font-size: 16px;
+  border-radius: 10px;
+  background-color: #096B68;
+  color: #FFF;
+  font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s;
 }
 
 .otp-card button:hover {
-  background: #5a67d8;
+  background-color: #129990;
 }
 
-.otp-card button:disabled {
-  background: gray;
-  cursor: not-allowed;
-}
-
-.otp-message {
-  margin-top: 10px;
+.otp-popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 25px;
+  border-radius: 10px;
   font-weight: bold;
+  color: #fff;
+  z-index: 1000;
+  animation: popupFade 0.5s ease-in-out;
+}
+
+/* Popup types */
+.otp-popup.success { background-color: #129990; } /* green */
+.otp-popup.error { background-color: #E94F37; }   /* red */
+.otp-popup.info { background-color: #096B68; }    /* blue-ish */
+
+@keyframes popupFade {
+  0% { opacity: 0; transform: translate(-50%, -20px); }
+  100% { opacity: 1; transform: translate(-50%, 0); }
 }

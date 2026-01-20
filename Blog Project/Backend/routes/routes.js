@@ -12,17 +12,10 @@ import {
 } from "../controllers/blogControllers.js";
 
 // User Controllers
-import {
-  signUp,
-  login,
-  logout,
-} from "../controllers/userControllers.js";
+import { signUp, login, logout } from "../controllers/userControllers.js";
 
 // OTP Controllers
-import {
-  sendOtp,
-  verifyOtp,
-} from "../controllers/otpControllers.js";
+import { sendOtp, verifyOtp } from "../controllers/otpControllers.js";
 
 const router = express.Router();
 

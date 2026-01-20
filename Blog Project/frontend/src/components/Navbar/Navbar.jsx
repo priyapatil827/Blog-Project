@@ -1,23 +1,27 @@
 import { Link, useNavigate } from "react-router-dom";
-import { logout } from "../../api/auth";
 import "./Navbar.css";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const isLoggedIn = !!localStorage.getItem("token"); // simple check
 
-
-  const handleLogout = () => {
-    fetch("http://localhost:4000/api/logout", {
-      method: "POST",
-      credentials: "include", // important for cookies
-    }).then(() => {
-      // ✅ Local state / storage clear
+  const handleLogout = async () => {
+    try {
+      await fetch("http://localhost:4000/api/logout", {
+        method: "POST",
+        credentials: "include",
+      });
+    } catch (err) {
+      console.log("Server logout failed, continuing local logout");
+    } finally {
       localStorage.removeItem("token");
-      navigate("/login");
-    });
-  };
 
+      // 🔥 Dispatch custom event so App.jsx can re-check login state
+      window.dispatchEvent(new Event("auth-change"));
+
+      // 🔥 Instant navigate to login
+      navigate("/login", { replace: true });
+    }
+  };
 
   return (
     <nav className="navbar">
@@ -25,12 +29,9 @@ export default function Navbar() {
       <div>
         <Link to="/home">Home</Link>
         <Link to="/create">Create Blog</Link>
-
-
         <button onClick={handleLogout} className="btn">
           Logout
         </button>
-
       </div>
     </nav>
   );
