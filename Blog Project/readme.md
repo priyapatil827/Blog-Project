@@ -24,6 +24,7 @@ src/
  │   ├── Home/       # Blog feed
  │   ├── Login/     # Login page
  │   ├── Signup/    # Register page
+ |   ├── OtpVerify/ # otp verification
  │   └── Welcome/  # Landing page
  ├── App.jsx       # Main routing file
  ├── main.jsx     # Entry point
@@ -103,7 +104,10 @@ Watch the complete working demo of this Blog Application here 👇
 
 
 
-https://github.com/user-attachments/assets/2abb92cb-c12f-4905-8cfa-4930b4b23176
+https://github.com/user-attachments/assets/cd427a2b-e024-4584-9bb1-d087e35b7248
+
+
+
 
 
 
