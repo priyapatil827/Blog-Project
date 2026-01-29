@@ -3,26 +3,26 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #FFFBDE; /* main bg */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fffbde; /* main bg */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .otp-card {
-  background-color: #90D1CA; /* card bg */
+  background-color: #90d1ca; /* card bg */
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   gap: 15px;
   width: 350px;
   text-align: center;
-  color: #096B68; /* text color */
+  color: #096b68; /* text color */
 }
 
 .otp-card h2 {
   margin-bottom: 20px;
-  color: #096B68;
+  color: #096b68;
 }
 
 .otp-card input {
@@ -36,8 +36,8 @@
   padding: 12px;
   border: none;
   border-radius: 10px;
-  background-color: #096B68;
-  color: #FFF;
+  background-color: #096b68;
+  color: #fff;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s;
@@ -61,11 +61,70 @@
 }
 
 /* Popup types */
-.otp-popup.success { background-color: #129990; } /* green */
-.otp-popup.error { background-color: #E94F37; }   /* red */
-.otp-popup.info { background-color: #096B68; }    /* blue-ish */
+.otp-popup.success {
+  background-color: #129990;
+} /* green */
+.otp-popup.error {
+  background-color: #e94f37;
+} /* red */
+.otp-popup.info {
+  background-color: #096b68;
+} /* blue-ish */
 
 @keyframes popupFade {
-  0% { opacity: 0; transform: translate(-50%, -20px); }
-  100% { opacity: 1; transform: translate(-50%, 0); }
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.otp-timer {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #129990;
+  background: #f1fdfb;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.otp-timer.danger {
+  color: #d63031;
+  background: #ffecec;
+  animation: pulse 1s infinite;
+}
+
+.resend-btn {
+  margin-top: 12px;
+  background: transparent;
+  border: 2px solid #129990;
+  color: #129990;
+  padding: 10px;
+  width: 100%;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.resend-btn:hover {
+  background: #129990;
+  color: white;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
